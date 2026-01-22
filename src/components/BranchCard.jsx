@@ -7,14 +7,14 @@ function BranchCard({ branch }) {
     <div className="bg-gray-800 rounded-lg shadow">
       {/* Branch Header */}
       <div
-        className="p-5 cursor-pointer flex justify-between items-center"
+        className="p-4 sm:p-5 cursor-pointer flex justify-between items-center"
         onClick={() => setOpen(!open)}
       >
         <div>
-          <h2 className="text-xl font-semibold text-white">
+          <h2 className="text-lg sm:text-xl font-semibold text-white">
             {branch.branchName}
           </h2>
-          <p className="text-sm text-gray-300">
+          <p className="text-xs sm:text-sm text-gray-300">
             {branch.country}
           </p>
         </div>
@@ -26,7 +26,7 @@ function BranchCard({ branch }) {
 
       {/* Dropdown Content */}
       {open && (
-        <div className="px-5 pb-5 border-t border-gray-700 text-sm space-y-2">
+        <div className="px-4 sm:px-5 pb-4 sm:pb-5 border-t border-gray-700 text-sm space-y-2">
           <p className="text-gray-200">
             <strong className="text-white">Address:</strong> {branch.address}
           </p>
@@ -38,7 +38,7 @@ function BranchCard({ branch }) {
           </p>
 
           {/* Departments */}
-          <div className="mt-4">
+          <div className="mt-3">
             <h3 className="font-semibold text-white mb-2">
               Departments
             </h3>
@@ -46,16 +46,18 @@ function BranchCard({ branch }) {
             {branch.departments.map((dept, index) => (
               <div
                 key={index}
-                className="ml-4 mb-2 border-l-2 border-gray-700 pl-3"
+                className="ml-2 sm:ml-4 mb-2 border-l-2 border-gray-700 pl-2 sm:pl-3"
               >
-                <p className="font-medium text-white">{dept.name}</p>
-                <p className="text-gray-300">
+                <p className="font-medium text-white text-sm sm:text-base">
+                  {dept.name}
+                </p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Role: {dept.role}
                 </p>
-                 <p className="text-gray-300">
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Phone: {dept.phone}
                 </p>
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Email: {dept.email}
                 </p>
               </div>
